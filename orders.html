@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Vertical List of Orders</title>
+    <link rel="stylesheet" href="stylesheet/header.css">
+    <link rel="stylesheet" href="stylesheet/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        .vertical-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .order {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            margin: 10px;
+            width: 80%; /* Adjust this value to your preference */
+            max-width: 400px; /* You can set a maximum width if needed */
+        }
+    </style>
+</head>
+<body>
+<!--header-->
+<section>
+    <header class="header">
+        <div class="logo">
+            <a href="#">
+                <img src="img/canteen-logo.png" alt="Logo">
+            </a>
+            <span class="logo-text">Canteen Management System</span>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+                <li class="cart-icon">
+                    <a class="cart-circle" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <div class="cart-count">0</div>
+                </li>
+
+            </ul>
+        </nav>
+
+
+    </header>
+</section>
+<div class="vertical-list">
+    <div class="order"><b>Order 1:</b> Donut x1 Oreo Shake x1
+        <br><br>Tk 505.25</div>
+
+    <!-- Add more orders here -->
+</div>
+<footer>
+    <div style="width: 40%; padding-right: 10%">
+        <a class="canteen text-white" href="index.html"> Canteen Management System</a>
+        <p>Lorem ipsum dolor sit amet consectetur. Odio amet natoque tortor convallis. Bibendum sapien suspendisse ipsum urna malesuada elit. Bibendum vitae nibh scelerisque sed aliquam ullamcorper est. </p>
+    </div>
+    <div style="width: 20%;">
+        <h3>Quick links</h3>
+        <ul>
+            <li>Browse Foodtime</li>
+            <li>Browse Food Tim</li>
+            <li>Register</li>
+        </ul>
+    </div>
+    <div style="width: 20%;">
+        <h3>Quick links</h3>
+        <ul>
+            <li>Browse Foodtime</li>
+            <li>Browse Food Tim</li>
+            <li>Register</li>
+        </ul>
+    </div>
+    <div style="width: 20%;">
+        <h3>Quick links</h3>
+        <ul>
+            <li>Browse Foodtime</li>
+            <li>Browse Food Tim</li>
+            <li>Register</li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

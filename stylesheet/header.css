@@ -9,6 +9,21 @@
     align-items: center;
 }
 
+.logout-button {
+    font-size: 24px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: white;
+    color: #333;
+}
+
 .logo {
     display: flex;
     align-items: center;

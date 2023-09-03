@@ -38,6 +38,11 @@
                     </a>
                     <div class="cart-count">0</div>
                 </li>
+                <li>
+                    <a class="logout-button" href="login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </li>
 
             </ul>
         </nav>
@@ -79,13 +84,18 @@
 
 <!--            subtotal-->
             <div class="col-md-4">
+<!--                <div style="width: 90%" id="countdown-container">-->
+<!--                    <i id="clock-icon" class="fas fa-clock"></i>-->
+<!--                    <p id="countdown">Estimated waiting time:</p>-->
+<!--                </div>-->
+<!--                <br>-->
                 <h3>Cart Totals</h3>
                 <div class="subtotal-card">
                     <h5>Subtotal: Tk 500.00</h5>
                     <p>VAT: Tk 5.25</p>
                     <hr>
                     <h4>Total: Tk 505.25</h4>
-                    <button class="add-to-cart-button">Checkout</button>
+                    <button id="checkout-button" class="add-to-cart-button">Checkout</button>
                 </div>
 
             </div>
@@ -124,6 +134,40 @@
     </div>
 </footer>
 
+
+<script>
+    // JavaScript code to start the countdown when the button is clicked
+    document.getElementById("checkout-button").addEventListener("click", function () {
+        // Set the estimated waiting time in minutes
+        const estimatedWaitingTimeMinutes = 20; // Change this value as needed
+
+        const countdownElement = document.getElementById("countdown");
+
+        // Calculate the end time of the countdown
+        const endTime = new Date();
+        endTime.setMinutes(endTime.getMinutes() + estimatedWaitingTimeMinutes);
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = new Date(endTime - now);
+
+            const minutes = timeLeft.getMinutes();
+            const seconds = timeLeft.getSeconds();
+
+            const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            countdownElement.textContent = `Estimated waiting time: ${formattedTime}`;
+
+            if (minutes === 0 && seconds === 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "Your order is ready!";
+            }
+        }
+
+        updateCountdown(); // Call the function immediately to avoid initial delay
+
+        const countdownInterval = setInterval(updateCountdown, 1000); // Update the countdown every second
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>

@@ -84,6 +84,21 @@ body {
 
 }
 
+/* CSS for modal notification */
+.modal-notification {
+    display: none;
+    position: fixed;
+    top: 90px; /* Adjust this value for your header height */
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
 .logout-button {
     font-size: 24px;
     padding: 10px;
@@ -348,6 +363,12 @@ body {
 
     .discount-banner {
         width: 50%;
+    }
+    .modal-notification {
+        top: 60px; /* Adjust this value for smaller screens */
+        right: 10px; /* Adjust this value for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
     }
 }
 

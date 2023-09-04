@@ -248,6 +248,42 @@
     </div>
 </footer>
 
+<!-- Modal notification -->
+<div id="cart-notification" class="modal-notification">
+    <span id="cart-notification-text"></span>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+
+        addToCartButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                // Get the food name and quantity from the card
+                const card = button.closest(".food-card");
+                const foodName = card.querySelector("h4").textContent;
+                const quantity = card.querySelector(".input-box").value;
+
+                // Display the modal notification
+                const cartNotification = document.getElementById("cart-notification");
+                const cartNotificationText = document.getElementById("cart-notification-text");
+
+                cartNotificationText.textContent = `Added ${foodName} (${quantity}x) to cart`;
+                cartNotification.style.display = "block";
+
+                // Hide the notification after 3 seconds (adjust as needed)
+                setTimeout(function () {
+                    cartNotification.style.opacity = "0";
+                    setTimeout(function () {
+                        cartNotification.style.display = "none";
+                        cartNotification.style.opacity = "1";
+                    }, 300);
+                }, 3000);
+            });
+        });
+    });
+</script>
+
+
 <!--jquery for using +- individually button w/o making unique ids -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
